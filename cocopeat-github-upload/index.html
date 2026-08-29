@@ -1,0 +1,1175 @@
+<title>Eco Terra Agro Global</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #10231A;
+    --forest-2: #17301F;
+    --olive: #3A3F27;
+    --moss: #52713F;
+    --moss-light: #7C9A64;
+    --sage: #C7D1B4;
+    --sage-2: #E4E7D6;
+    --sand: #F5F1E4;
+    --sand-2: #EDE7D4;
+    --coir: #7B5236;
+    --coir-2: #A97B54;
+    --ink: #16241A;
+    --cream: #FBF8F0;
+    --line-light: rgba(22, 36, 26, 0.14);
+    --line-dark: rgba(245, 241, 228, 0.18);
+    --shadow: 0 30px 60px -30px rgba(16, 35, 26, 0.45);
+    --radius: 2px;
+    --maxw: 1240px;
+    font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-size: 16.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  section { position: relative; }
+
+  h1, h2, h3, h4 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    line-height: 1.08;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: "Archivo", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+
+  /* ---------- CJK (Chinese) type adjustments ---------- */
+  html[lang="zh"] h1,
+  html[lang="zh"] h2,
+  html[lang="zh"] h3,
+  html[lang="zh"] h4 {
+    font-family: "Noto Serif SC", "Fraunces", serif;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+  html[lang="zh"] body,
+  html[lang="zh"] {
+    font-family: "Noto Sans SC", "Archivo", sans-serif;
+  }
+  html[lang="zh"] .eyebrow,
+  html[lang="zh"] .nav-links a,
+  html[lang="zh"] .chip,
+  html[lang="zh"] .btn,
+  html[lang="zh"] .lang-btn,
+  html[lang="zh"] .footer h5,
+  html[lang="zh"] .compare-row .k,
+  html[lang="zh"] .contact-card .k,
+  html[lang="zh"] .product-index,
+  html[lang="zh"] .spec-meta div span {
+    letter-spacing: 0;
+  }
+  html[lang="zh"] h1 em { font-style: normal; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Archivo", sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(.2,.7,.3,1), background 0.3s, color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--sand); color: var(--forest); }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-ghost { border-color: rgba(245,241,228,0.55); color: var(--sand); }
+  .btn-ghost:hover { background: rgba(245,241,228,0.12); }
+  .btn-dark { background: var(--forest); color: var(--sand); }
+  .btn-dark:hover { background: var(--forest-2); }
+  .btn-outline { border-color: rgba(22,36,26,0.35); color: var(--ink); }
+  .btn-outline:hover { background: rgba(22,36,26,0.06); }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 0;
+    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  }
+  .nav.solid {
+    background: rgba(16, 35, 26, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    box-shadow: 0 10px 30px -20px rgba(0,0,0,0.5);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .brand img { height: 34px; width: auto; display: block; filter: brightness(0) saturate(100%) invert(94%) sepia(8%) saturate(367%) hue-rotate(39deg) brightness(101%) contrast(92%); }
+  .footer-brand .brand img { height: 46px; filter: none; }
+  .nav-links {
+    display: flex;
+    gap: clamp(14px, 2vw, 30px);
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .nav-links li { flex-shrink: 0; }
+  .nav-links a {
+    color: var(--sand);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.82;
+    transition: opacity 0.25s;
+    position: relative;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-cta .btn { padding: 11px 20px; font-size: 12px; }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(245,241,228,0.3);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--sage);
+    font-family: "Archivo", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: 16px;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .lang-btn.active { background: var(--sand); color: var(--forest); }
+  .lang-btn:not(.active):hover { color: var(--sand); }
+
+  .burger {
+    display: none;
+    width: 34px; height: 26px;
+    background: none; border: none; cursor: pointer;
+    flex-direction: column; justify-content: space-between;
+    padding: 3px 0;
+  }
+  .burger span { display: block; height: 2px; background: var(--sand); border-radius: 2px; }
+
+  @media (max-width: 920px) {
+    .nav-links { position: fixed; inset: 0 0 0 30%; background: var(--forest); flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px; gap: 26px; transform: translateX(100%); transition: transform 0.45s cubic-bezier(.2,.7,.3,1); }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 16px; }
+    .burger { display: flex; }
+    .nav-cta .btn.ghost-desktop { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(16,35,26,0.55) 0%, rgba(16,35,26,0.45) 35%, rgba(12,24,17,0.86) 88%, #10231A 100%), var(--forest) url('assets/hero-sacks.jpg') center 32%/cover no-repeat;
+    color: var(--sand);
+    padding-top: 140px;
+  }
+  .hero-inner { padding-bottom: clamp(56px, 9vw, 108px); max-width: 880px; }
+  .hero .eyebrow { color: var(--sage); margin-bottom: 22px; }
+  .hero h1 {
+    font-size: clamp(42px, 6.6vw, 84px);
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--moss-light); }
+  .hero p.lead {
+    font-size: clamp(16px, 1.6vw, 19.5px);
+    max-width: 560px;
+    color: var(--sage-2);
+    margin: 26px 0 40px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-scroll {
+    position: absolute;
+    right: clamp(20px,5vw,56px);
+    bottom: 34px;
+    color: var(--sage);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .hero-scroll::after {
+    content: "";
+    width: 1px; height: 46px;
+    background: linear-gradient(var(--sage), transparent);
+    animation: scrolldrop 2.2s ease-in-out infinite;
+  }
+  @keyframes scrolldrop { 0% { transform: scaleY(0); transform-origin: top; opacity: 0; } 40% { transform: scaleY(1); transform-origin: top; opacity: 1; } 60% { transform: scaleY(1); transform-origin: bottom; opacity: 1;} 100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; } }
+
+  /* ---------- generic section spacing ---------- */
+  .section { padding: clamp(72px, 11vw, 132px) 0; }
+  .section-light { background: var(--sand); color: var(--ink); }
+  .section-cream { background: var(--cream); color: var(--ink); }
+  .section-sage { background: var(--sage-2); color: var(--ink); }
+  .section-dark { background: var(--forest); color: var(--sand); }
+  .section-dark .eyebrow { color: var(--sage); }
+  .section-dark h2 { color: var(--cream); }
+
+  .eyebrow-dark { color: var(--moss); }
+  .eyebrow-light { color: var(--sage); }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(36px, 6vw, 90px);
+    align-items: center;
+  }
+  .about-copy h2 { font-size: clamp(30px, 4vw, 46px); margin-top: 18px; }
+  .about-copy p.body-lg { font-size: 18px; color: var(--olive); max-width: 54ch; margin: 22px 0 30px; }
+  .about-points { display: grid; gap: 18px; margin-top: 8px; }
+  .about-point { display: flex; gap: 16px; align-items: flex-start; padding-top: 18px; border-top: 1px solid var(--line-light); }
+  .about-point .num { font-family: "Fraunces", serif; font-style: italic; color: var(--coir); font-size: 17px; min-width: 26px; }
+  .about-point h4 { font-size: 15.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 4px; }
+  .about-point p { margin: 0; color: var(--olive); font-size: 14.8px; max-width: 42ch; }
+  .about-media { position: relative; }
+  .about-media img { border-radius: var(--radius); box-shadow: var(--shadow); }
+  .about-media .tag {
+    position: absolute; left: -18px; bottom: -22px;
+    background: var(--forest); color: var(--sand);
+    padding: 16px 22px; max-width: 220px;
+    font-size: 12.5px; line-height: 1.5;
+    box-shadow: var(--shadow);
+  }
+  .about-media .tag strong { font-family:"Fraunces", serif; display:block; font-size: 26px; font-weight:500; color: var(--sage); }
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-media { order: -1; }
+    .about-media .tag { position: static; margin-top: 16px; max-width: none; }
+  }
+
+  /* ---------- PRODUCTS ---------- */
+  .section-head { max-width: 640px; margin-bottom: clamp(40px, 6vw, 72px); }
+  .section-head h2 { font-size: clamp(32px, 4.4vw, 50px); margin-top: 16px; }
+  .section-head p { margin-top: 18px; font-size: 16.5px; opacity: 0.85; max-width: 56ch; }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+  .product {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(30px, 5vw, 70px);
+    align-items: center;
+    padding: clamp(40px, 6vw, 64px) 0;
+  }
+  .product:not(:last-child) { border-bottom: 1px solid var(--line-light); }
+  .product.reverse { grid-template-columns: 0.85fr 1.15fr; }
+  .product.reverse .product-media { order: 2; }
+  .product-media { position: relative; }
+  .product-media .frame { position: relative; overflow: hidden; box-shadow: var(--shadow); }
+  .product-media img.main { width: 100%; height: clamp(300px, 34vw, 460px); object-fit: cover; }
+  .product-thumbs { display: flex; gap: 10px; margin-top: 12px; }
+  .product-thumbs img { height: 84px; width: 110px; object-fit: cover; border-radius: 2px; cursor: pointer; filter: saturate(0.9); transition: filter 0.3s, outline 0.3s; outline: 2px solid transparent; }
+  .product-thumbs img:hover { filter: saturate(1.1); outline-color: var(--moss); }
+  .product-index { font-family: "Fraunces", serif; font-style: italic; color: var(--coir); font-size: 15px; margin-bottom: 10px; display:block; }
+  .product-copy h3 { font-size: clamp(28px, 3.6vw, 42px); }
+  .product-copy p.desc { color: var(--olive); font-size: 16px; margin: 18px 0 26px; max-width: 46ch; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .chip { font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 13px; border: 1px solid var(--line-light); border-radius: 20px; color: var(--olive); }
+  .spec-list { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 10px; }
+  .spec-list li { display: flex; gap: 12px; font-size: 15px; color: var(--ink); }
+  .spec-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--moss); margin-top: 8px; flex-shrink: 0; }
+  .spec-meta { display: flex; gap: 34px; margin-top: 4px; flex-wrap: wrap; }
+  .spec-meta div span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--coir); margin-bottom: 4px; }
+  .spec-meta div strong { font-family: "Fraunces", serif; font-weight: 500; font-size: 17px; }
+  @media (max-width: 860px) {
+    .product, .product.reverse { grid-template-columns: 1fr; }
+    .product.reverse .product-media { order: 0; }
+  }
+
+  /* ---------- COMPARISON ---------- */
+  .compare-wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--line-light); border: 1px solid var(--line-light); overflow: hidden; border-radius: var(--radius); }
+  .compare-col { background: var(--cream); padding: clamp(26px,4vw,42px); }
+  .compare-col.pallet { background: var(--forest); color: var(--sand); }
+  .compare-col h3 { font-size: 24px; margin-bottom: 4px; }
+  .compare-col .fmt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--coir); }
+  .compare-col.pallet .fmt { color: var(--sage); }
+  .compare-row { padding: 16px 0; border-top: 1px solid var(--line-light); }
+  .compare-col.pallet .compare-row { border-top-color: var(--line-dark); }
+  .compare-row .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; opacity: 0.65; margin-bottom: 6px; }
+  .compare-row .v { font-size: 15.5px; line-height: 1.5; }
+  @media (max-width: 760px) { .compare-wrap { grid-template-columns: 1fr; } }
+
+  /* ---------- WHY COCOPEAT ---------- */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); }
+  .why-card { background: var(--sand); padding: clamp(28px, 3.4vw, 40px) clamp(24px,3vw,34px); display: flex; flex-direction: column; gap: 16px; }
+  .why-icon { width: 42px; height: 42px; color: var(--moss); }
+  .why-card h4 { font-size: 18px; font-weight: 600; font-family: "Archivo", sans-serif; letter-spacing: -0.01em; }
+  .why-card p { margin: 0; font-size: 14.6px; color: var(--olive); }
+  @media (max-width: 880px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- DURABILITY ---------- */
+  .durability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,5vw,64px); align-items: center; }
+  .video-frame { position: relative; box-shadow: var(--shadow); background: #000; border-radius: var(--radius); overflow: hidden; }
+  .video-frame video { width: 100%; display: block; max-height: 560px; object-fit: cover; background:#000; }
+  .video-play {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(10,18,13,0.28); cursor: pointer; transition: opacity 0.4s;
+  }
+  .video-play .disc {
+    width: 78px; height: 78px; border-radius: 50%; background: rgba(245,241,228,0.92);
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+  }
+  .video-play:hover .disc { transform: scale(1.08); }
+  .video-play svg { width: 24px; height: 24px; fill: var(--forest); margin-left: 4px; }
+  .video-play.hidden { opacity: 0; pointer-events: none; }
+  .durability-note { margin-top: 16px; font-size: 13px; color: var(--sage); display:flex; gap:10px; align-items:flex-start; }
+  .durability-copy .stat-row { display: flex; gap: 30px; margin: 30px 0; flex-wrap: wrap; }
+  .durability-copy .stat { border-left: 2px solid var(--moss-light); padding-left: 16px; }
+  .durability-copy .stat strong { display: block; font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; color: var(--cream); }
+  .durability-copy .stat span { font-size: 12.5px; color: var(--sage); }
+  .durability-copy p { color: var(--sage-2); font-size: 16px; max-width: 46ch; }
+  @media (max-width: 880px) { .durability-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- APPLICATIONS ---------- */
+  .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .app-card { position: relative; height: 340px; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .app-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(.2,.7,.2,1); }
+  .app-card:hover img { transform: scale(1.06); }
+  .app-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,35,26,0) 40%, rgba(12,22,16,0.86) 100%); }
+  .app-card .label { position: absolute; left: 20px; right: 20px; bottom: 20px; color: var(--cream); z-index: 2; }
+  .app-card .label h4 { font-family: "Fraunces", serif; font-weight: 500; font-size: 20px; margin-bottom: 6px; }
+  .app-card .label p { margin: 0; font-size: 13px; color: var(--sage-2); line-height: 1.5; }
+  @media (max-width: 980px) { .app-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .app-grid { grid-template-columns: 1fr; } .app-card { height: 280px; } }
+
+  /* ---------- SUSTAINABILITY ---------- */
+  .sustain {
+    background: linear-gradient(180deg, rgba(16,35,26,0.94), rgba(16,35,26,0.97)), url('assets/cocopeat-texture-wide.jpg') center/cover;
+    color: var(--sand);
+  }
+  .sustain .section-head p { color: var(--sage-2); }
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 20px; position: relative; }
+  .flow-step { text-align: left; position: relative; padding-top: 26px; }
+  .flow-step .thumb { height: 150px; border-radius: var(--radius); overflow: hidden; margin-bottom: 18px; box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6); }
+  .flow-step .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .flow-step::before {
+    content: attr(data-n);
+    position: absolute; top: -6px; left: 0;
+    font-family: "Fraunces", serif; font-style: italic; font-size: 13px; color: var(--coir-2);
+  }
+  .flow-step h4 { font-size: 16.5px; font-weight: 600; margin-bottom: 6px; font-family: "Archivo", sans-serif; }
+  .flow-step p { font-size: 13.4px; color: var(--sage-2); margin: 0; }
+  .flow-arrow { position: absolute; top: 76px; right: -20px; color: var(--moss-light); opacity: 0.7; }
+  @media (max-width: 880px) {
+    .flow { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+    .flow-arrow { display: none; }
+  }
+  @media (max-width: 540px) { .flow { grid-template-columns: 1fr; } }
+
+  /* ---------- GALLERY ---------- */
+  .gallery { columns: 4 220px; column-gap: 14px; }
+  .gallery figure { margin: 0 0 14px; break-inside: avoid; position: relative; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; }
+  .gallery img { width: 100%; display: block; transition: transform 0.6s cubic-bezier(.2,.7,.2,1); }
+  .gallery figure:hover img { transform: scale(1.045); }
+  .gallery figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 14px 10px;
+    font-size: 11.5px; letter-spacing: 0.04em; color: var(--cream);
+    background: linear-gradient(180deg, rgba(16,35,26,0) 0%, rgba(12,20,15,0.82) 100%);
+    opacity: 0; transition: opacity 0.35s;
+  }
+  .gallery figure:hover figcaption { opacity: 1; }
+
+  .lightbox { position: fixed; inset: 0; background: rgba(10,16,12,0.92); z-index: 300; display: none; align-items: center; justify-content: center; padding: 40px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: min(92vw, 1100px); max-height: 86vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  .lightbox-close { position: absolute; top: 24px; right: clamp(20px,5vw,56px); color: var(--sand); background: none; border: 1px solid rgba(245,241,228,0.4); width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 18px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { max-width: 780px; }
+  .faq-item { border-bottom: 1px solid var(--line-light); }
+  .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-family: "Fraunces", serif; font-size: 19px; color: var(--ink); }
+  .faq-q .plus { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+  .faq-q .plus::before, .faq-q .plus::after { content:""; position: absolute; background: var(--forest); transition: transform 0.3s; }
+  .faq-q .plus::before { top: 50%; left: 0; width: 100%; height: 1.5px; margin-top: -0.75px; }
+  .faq-q .plus::after { left: 50%; top: 0; height: 100%; width: 1.5px; margin-left: -0.75px; }
+  .faq-item.open .faq-q .plus::after { transform: rotate(90deg); opacity: 0; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a p { margin: 0 0 24px; max-width: 62ch; color: var(--olive); font-size: 15.3px; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,5vw,70px); }
+  .contact-cards { display: grid; gap: 14px; align-content: start; }
+  .contact-card { background: rgba(245,241,228,0.06); border: 1px solid var(--line-dark); padding: 22px 24px; border-radius: var(--radius); display: flex; gap: 16px; align-items: flex-start; text-decoration: none; color: var(--sand); transition: background 0.3s, border-color 0.3s; }
+  .contact-card:hover { background: rgba(245,241,228,0.12); border-color: rgba(245,241,228,0.35); }
+  .contact-card .ic { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--sage); }
+  .contact-card .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--sage); margin-bottom: 4px; }
+  .contact-card .v { font-size: 15.5px; }
+  .contact-card .v small { display:block; font-size: 12.5px; color: var(--sage-2); margin-top: 3px; font-weight: 400;}
+  .social-row { display: flex; gap: 12px; margin-top: 22px; }
+  .social-pill { border: 1px solid var(--line-dark); color: var(--sage-2); font-size: 12px; padding: 9px 16px; border-radius: 20px; letter-spacing: 0.03em; }
+  .contact-cta h2 { font-size: clamp(34px, 5vw, 58px); color: var(--cream); }
+  .contact-cta p { color: var(--sage-2); font-size: 17px; max-width: 46ch; margin: 20px 0 34px; }
+
+  /* ---------- FOOTER ---------- */
+  .footer { background: #0C1C13; color: var(--sage-2); padding: 60px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr; gap: 36px; padding-bottom: 40px; border-bottom: 1px solid var(--line-dark); }
+  .footer-brand .brand { margin-bottom: 14px; }
+  .footer-brand p { font-size: 13.6px; max-width: 34ch; color: var(--sage-2); opacity: 0.85; }
+  .footer h5 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); margin-bottom: 16px; font-family: "Archivo", sans-serif; font-weight: 600; }
+  .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .footer a { text-decoration: none; color: var(--sage-2); font-size: 14px; opacity: 0.9; }
+  .footer a:hover { opacity: 1; text-decoration: underline; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 12.5px; opacity: 0.7; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } .contact-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  .divider-fiber { height: 26px; overflow: hidden; }
+  .divider-fiber svg { width: 100%; height: 100%; display:block; }
+</style>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand"><img src="assets/logo-full.png" alt="Eco Terra Agro Global" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#products" data-i18n="nav.products">Products</a></li>
+      <li><a href="#why" data-i18n="nav.why">Why Cocopeat</a></li>
+      <li><a href="#durability" data-i18n="nav.durability">Durability</a></li>
+      <li><a href="#applications" data-i18n="nav.applications">Applications</a></li>
+      <li><a href="#sustainability" data-i18n="nav.sustainability">Sustainability</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div class="lang-toggle" id="langToggle">
+        <button class="lang-btn active" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="zh" type="button">中文</button>
+      </div>
+      <a href="#contact" class="btn btn-ghost ghost-desktop" data-i18n="cta.getintouch">Get in Touch</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Eco Terra Agro Global</p>
+    <h1 data-i18n="hero.h1">Cocopeat, <em>grown</em><br>for purpose.</h1>
+    <p class="lead" data-i18n="hero.lead">Reliable cocopeat and coconut-based agricultural solutions, made from upcycled coconut husk to help growers and supply chains work better.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-primary" data-i18n="hero.cta1">Explore Our Products</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="cta.getintouch">Get in Touch</a>
+    </div>
+  </div>
+  <span class="hero-scroll" data-i18n="hero.scroll">Scroll</span>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section-light" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <p class="eyebrow eyebrow-dark" data-i18n="about.eyebrow">About Us</p>
+      <h2 data-i18n="about.h2">Naturally sourced.<br>Carefully prepared.</h2>
+      <p class="body-lg" data-i18n="about.body">Eco Terra Agro Global provides reliable cocopeat and coconut-based agricultural solutions, made to help growers work more efficiently in healthier growing environments — from commercial farms and nurseries to distributors and hobbyist buyers.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <span class="num">01</span>
+          <div><h4 data-i18n="about.point1.h4">Premium Quality</h4><p data-i18n="about.point1.p">Consistent cocopeat, prepared with care from raw coconut husk.</p></div>
+        </div>
+        <div class="about-point">
+          <span class="num">02</span>
+          <div><h4 data-i18n="about.point2.h4">Dependable Supply</h4><p data-i18n="about.point2.p">Focused on reliable availability for businesses that depend on us.</p></div>
+        </div>
+        <div class="about-point">
+          <span class="num">03</span>
+          <div><h4 data-i18n="about.point3.h4">Ethical Sourcing</h4><p data-i18n="about.point3.p">Built on giving new value to coconut husk that would otherwise go to waste.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-media reveal">
+      <img src="assets/coconut-split.jpg" alt="Split coconuts, the raw material behind every cocopeat product" />
+      <div class="tag" data-i18n="about.tag"><strong>100%</strong>Made from coconut husk — a byproduct of the coconut industry, not a mined or synthetic material.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section section-cream" id="products">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow eyebrow-dark" data-i18n="products.eyebrow">Our Range</p>
+      <h2 data-i18n="products.h2">Our Cocopeat Products</h2>
+      <p class="center" data-i18n="products.sub">Two products, built for two different jobs — from the growing bench to the shipping dock.</p>
+    </div>
+
+    <!-- Sack -->
+    <div class="product reveal">
+      <div class="product-media">
+        <div class="frame"><img class="main" id="sackMain" src="assets/sack-open.jpg" alt="Cocopeat Sack, open and filled with loose cocopeat" /></div>
+        <div class="product-thumbs">
+          <img src="assets/sack-open.jpg" data-full="assets/sack-open.jpg" onclick="document.getElementById('sackMain').src=this.dataset.full" alt="Sack thumbnail 1" />
+          <img src="assets/hero-sacks.jpg" data-full="assets/hero-sacks.jpg" onclick="document.getElementById('sackMain').src=this.dataset.full" alt="Sack thumbnail 2" />
+          <img src="assets/sack-macro.jpg" data-full="assets/sack-macro.jpg" onclick="document.getElementById('sackMain').src=this.dataset.full" alt="Sack thumbnail 3" />
+        </div>
+      </div>
+      <div class="product-copy">
+        <span class="product-index" data-i18n="products.sack.index">Product 01</span>
+        <h3 data-i18n="products.sack.h3">Cocopeat Sack</h3>
+        <p class="desc" data-i18n="products.sack.desc">Loose, uncompressed cocopeat sold ready to use — no soaking, no expansion, no waiting. Straight from the bag to the pot.</p>
+        <div class="chip-row">
+          <span class="chip" data-i18n="chip.soilamendment">Soil Amendment</span>
+          <span class="chip" data-i18n="chip.readytouse">Ready to Use</span>
+          <span class="chip" data-i18n="chip.hobbyist">Hobbyist Friendly</span>
+        </div>
+        <ul class="spec-list">
+          <li data-i18n="products.sack.li1">Usable immediately — no rehydration required</li>
+          <li data-i18n="products.sack.li2">Controlled moisture, easy to handle and store</li>
+          <li data-i18n="products.sack.li3">Suited to direct potting and home gardening</li>
+        </ul>
+        <div class="spec-meta">
+          <div><span data-i18n="label.size">Size</span><strong>70L / 10KG</strong></div>
+          <div><span data-i18n="label.bestfor">Best For</span><strong data-i18n="value.retailhome">Retail &amp; Home Use</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pallet -->
+    <div class="product reverse reveal">
+      <div class="product-media">
+        <div class="frame"><img class="main" id="palletMain" src="assets/pallet-side-low.jpg" alt="Cocopeat Pallet, a wood-free molded shipping pallet" /></div>
+        <div class="product-thumbs">
+          <img src="assets/pallet-side-low.jpg" data-full="assets/pallet-side-low.jpg" onclick="document.getElementById('palletMain').src=this.dataset.full" alt="Pallet thumbnail 1" />
+          <img src="assets/pallet-top-detail-a.jpg" data-full="assets/pallet-top-detail-a.jpg" onclick="document.getElementById('palletMain').src=this.dataset.full" alt="Pallet thumbnail 2" />
+          <img src="assets/pallet-stack-a.jpg" data-full="assets/pallet-stack-a.jpg" onclick="document.getElementById('palletMain').src=this.dataset.full" alt="Pallet thumbnail 3" />
+        </div>
+      </div>
+      <div class="product-copy">
+        <span class="product-index" data-i18n="products.pallet.index">Product 02</span>
+        <h3 data-i18n="products.pallet.h3">Cocopeat Pallet</h3>
+        <p class="desc" data-i18n="products.pallet.desc">Malaysia's first wood-free shipping pallet, manufactured entirely from upcycled agricultural waste — a direct replacement for standard timber pallets.</p>
+        <div class="chip-row">
+          <span class="chip" data-i18n="chip.bulk">Bulk / Wholesale</span>
+          <span class="chip" data-i18n="chip.exportready">Export Ready</span>
+          <span class="chip" data-i18n="chip.ispm15">ISPM 15 Exempt</span>
+        </div>
+        <ul class="spec-list">
+          <li data-i18n="products.pallet.li1">Cost and space efficient versus timber pallets</li>
+          <li data-i18n="products.pallet.li2">Industrial strength — built for demanding handling</li>
+          <li data-i18n="products.pallet.li3">No wood means no ISPM 15 fumigation requirement for export</li>
+        </ul>
+        <div class="spec-meta">
+          <div><span data-i18n="label.sizesmm">Sizes (mm)</span><strong>1200×1000 · 1200×800 · 1100×1100</strong></div>
+          <div><span data-i18n="label.bestfor">Best For</span><strong data-i18n="value.freightlogistics">Freight &amp; Logistics</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-dark" data-i18n="compare.eyebrow">At a Glance</p>
+      <h2 data-i18n="compare.h2">Cocopeat Sack vs. Cocopeat Pallet</h2>
+      <p data-i18n="compare.sub">Two very different products built for two different stages of your operation.</p>
+    </div>
+    <div class="compare-wrap reveal">
+      <div class="compare-col sack">
+        <div class="fmt" data-i18n="compare.format">Format</div>
+        <h3 data-i18n="products.sack.h3">Cocopeat Sack</h3>
+        <div class="compare-row"><div class="k" data-i18n="compare.mainpurpose">Main Purpose</div><div class="v" data-i18n="compare.sack.purpose">Loose, ready-to-use growing medium</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.handling">Handling</div><div class="v" data-i18n="compare.sack.handling">Ready straight from the bag — no rehydration</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.durability">Durability</div><div class="v" data-i18n="compare.sack.durability">Packed for safe handling and storage</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.suitablefor">Suitable For</div><div class="v" data-i18n="compare.sack.suitable">Direct potting, home &amp; hobby gardening</div></div>
+      </div>
+      <div class="compare-col pallet">
+        <div class="fmt" data-i18n="compare.format">Format</div>
+        <h3 data-i18n="products.pallet.h3">Cocopeat Pallet</h3>
+        <div class="compare-row"><div class="k" data-i18n="compare.mainpurpose">Main Purpose</div><div class="v" data-i18n="compare.pallet.purpose">Wood-free shipping &amp; handling pallet</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.handling">Handling</div><div class="v" data-i18n="compare.pallet.handling">Rigid, stackable molded unit for freight</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.durability">Durability</div><div class="v" data-i18n="compare.pallet.durability">Demonstrated to hold up under repeated impact — see below</div></div>
+        <div class="compare-row"><div class="k" data-i18n="compare.suitablefor">Suitable For</div><div class="v" data-i18n="compare.pallet.suitable">Freight, export &amp; supply-chain logistics</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY COCOPEAT ============ -->
+<section class="section section-cream" id="why">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow eyebrow-dark" data-i18n="why.eyebrow">Why Cocopeat</p>
+      <h2 data-i18n="why.h2">A Better Growing Medium, By Nature</h2>
+      <p class="center" data-i18n="why.sub">Cocopeat starts as a coconut husk — a byproduct of the coconut industry that would otherwise be discarded or burned.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="20" r="14"/><path d="M20 8c-5 4-5 20 0 24M20 8c5 4 5 20 0 24M6 20h28"/></svg>
+        <h4 data-i18n="why1.h4">Natural &amp; Renewable</h4>
+        <p data-i18n="why1.p">Made from coconut husk — a renewable resource that comes naturally from the coconut industry, not a mined or synthetic material.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 20a12 12 0 0 1 20.8-8.2M32 20a12 12 0 0 1-20.8 8.2"/><path d="M28.8 8v4h-4M11.2 32v-4h4"/></svg>
+        <h4 data-i18n="why2.h4">Reduces Waste</h4>
+        <p data-i18n="why2.p">Turns discarded coconut husk into a useful growing medium, instead of letting it go to landfill or open burning.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6s10 11 10 18a10 10 0 0 1-20 0c0-7 10-18 10-18Z"/></svg>
+        <h4 data-i18n="why3.h4">Biodegradable</h4>
+        <p data-i18n="why3.p">A natural material that decomposes after use, returning organic matter to the soil rather than persisting as waste.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 26c8-4 24-4 24-14M8 26c8 4 24 4 24-6"/></svg>
+        <h4 data-i18n="why4.h4">Water Management</h4>
+        <p data-i18n="why4.p">Retains water effectively when used appropriately, which can help reduce how much water plants need.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="9" y="9" width="22" height="22" rx="2"/><path d="M9 20h22M20 9v22"/></svg>
+        <h4 data-i18n="why5.h4">Low Environmental Impact</h4>
+        <p data-i18n="why5.p">Reuses agricultural waste and biodegrades naturally, giving it a relatively light footprint compared with synthetic media.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 5v30M8 12l24 16M32 12L8 28"/></svg>
+        <h4 data-i18n="why6.h4">Versatile</h4>
+        <p data-i18n="why6.p">Suitable across a range of agricultural and horticultural growing applications, from hobby pots to commercial operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DURABILITY ============ -->
+<section class="section section-dark" id="durability">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-light" data-i18n="durability.eyebrow">Built to Withstand</p>
+      <h2 data-i18n="durability.h2">Strength You Can See</h2>
+      <p style="color: var(--sage-2)" data-i18n="durability.sub">Product quality isn't only something we describe — it's something we demonstrate.</p>
+    </div>
+    <div class="durability-grid">
+      <div class="reveal">
+        <div class="video-frame">
+          <video id="durabilityVideo" poster="assets/durability-poster.jpg" controls playsinline preload="metadata">
+            <source src="assets/pallet-durability-test.mp4" type="video/mp4" />
+          </video>
+          <div class="video-play" id="videoPlayOverlay">
+            <div class="disc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <p class="durability-note" data-i18n="durability.note">Unscripted field test, filmed by our team — sound off by default.</p>
+      </div>
+      <div class="durability-copy reveal">
+        <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:clamp(24px,3vw,32px); color:var(--cream); margin-bottom:18px;" data-i18n="durability.h3">Tested against timber and plastic, by hand.</h3>
+        <p data-i18n="durability.p">In this test, the Cocopeat Pallet was struck repeatedly alongside a standard plastic pallet and a timber pallet. Both alternatives cracked or broke apart under the impact — the Cocopeat Pallet held its shape.</p>
+        <div class="stat-row">
+          <div class="stat"><strong data-i18n="durability.stat1.n">3 pallets</strong><span data-i18n="durability.stat1.l">tested side by side</span></div>
+          <div class="stat"><strong>ISPM 15</strong><span data-i18n="durability.stat2.l">exempt — no wood, no fumigation</span></div>
+          <div class="stat"><strong data-i18n="durability.stat3.n">Molded</strong><span data-i18n="durability.stat3.l">from upcycled agricultural waste</span></div>
+        </div>
+        <a href="#contact" class="btn btn-ghost" data-i18n="durability.cta">Ask About Bulk Orders</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLICATIONS ============ -->
+<section class="section section-light" id="applications">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-dark" data-i18n="applications.eyebrow">Who We Serve</p>
+      <h2 data-i18n="applications.h2">Built For Every Stage, From Bench To Border</h2>
+      <p data-i18n="applications.sub">From a single home garden to a full container of export freight.</p>
+    </div>
+    <div class="app-grid reveal">
+      <div class="app-card">
+        <img src="assets/sack-macro.jpg" alt="Home and hobby growers" />
+        <div class="label"><h4 data-i18n="app1.h4">Home &amp; Hobby Growers</h4><p data-i18n="app1.p">Direct potting and everyday gardening with the Cocopeat Sack.</p></div>
+      </div>
+      <div class="app-card">
+        <img src="assets/cocopeat-texture-wide.jpg" alt="Commercial farms and nurseries" />
+        <div class="label"><h4 data-i18n="app2.h4">Farms &amp; Nurseries</h4><p data-i18n="app2.p">A consistent growing medium for larger-scale operations.</p></div>
+      </div>
+      <div class="app-card">
+        <img src="assets/hero-sacks.jpg" alt="Distributors and supply chain" />
+        <div class="label"><h4 data-i18n="app3.h4">Distributors</h4><p data-i18n="app3.p">Dependable supply for businesses that move cocopeat onward.</p></div>
+      </div>
+      <div class="app-card">
+        <img src="assets/pallet-corner-detail.jpg" alt="Export and logistics" style="object-position: top;" />
+        <div class="label"><h4 data-i18n="app4.h4">Export &amp; Logistics</h4><p data-i18n="app4.p">The Cocopeat Pallet replaces timber for freight and shipping.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUSTAINABILITY ============ -->
+<section class="section sustain" id="sustainability">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-light" data-i18n="sustain.eyebrow">Sustainability</p>
+      <h2 data-i18n="sustain.h2">From Coconut Husk to Growing Solution</h2>
+      <p data-i18n="sustain.sub">Cocopeat gives new value to a material the coconut industry would otherwise discard — turning waste into a working part of modern agriculture.</p>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-step" data-n="01">
+        <div class="thumb"><img src="assets/coconut-split.jpg" alt="Coconut" /></div>
+        <h4 data-i18n="flow1.h4">Coconut</h4>
+        <p data-i18n="flow1.p">The coconut industry's own supply — the starting point for everything we make.</p>
+        <span class="flow-arrow"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 8h26M20 2l6 6-6 6"/></svg></span>
+      </div>
+      <div class="flow-step" data-n="02">
+        <div class="thumb"><img src="assets/sack-macro.jpg" alt="Husk fibre" /></div>
+        <h4 data-i18n="flow2.h4">Husk</h4>
+        <p data-i18n="flow2.p">The fibrous husk, otherwise burned or discarded, is separated and prepared.</p>
+        <span class="flow-arrow"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 8h26M20 2l6 6-6 6"/></svg></span>
+      </div>
+      <div class="flow-step" data-n="03">
+        <div class="thumb"><img src="assets/cocopeat-handful.jpg" alt="Cocopeat" /></div>
+        <h4 data-i18n="flow3.h4">Cocopeat</h4>
+        <p data-i18n="flow3.p">Processed into a natural, biodegradable growing medium — ready to use.</p>
+        <span class="flow-arrow"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 8h26M20 2l6 6-6 6"/></svg></span>
+      </div>
+      <div class="flow-step" data-n="04">
+        <div class="thumb"><img src="assets/cocopeat-texture-wide.jpg" alt="Growing application" /></div>
+        <h4 data-i18n="flow4.h4">Growing Application</h4>
+        <p data-i18n="flow4.p">Put to work in pots, nurseries and growing operations of every scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow eyebrow-dark" data-i18n="gallery.eyebrow">Gallery</p>
+      <h2 data-i18n="gallery.h2">From Husk to Handling</h2>
+      <p class="center" data-i18n="gallery.sub">A closer look at the material, the products, and how they're made and moved.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure onclick="openLightbox('assets/cocopeat-handful.jpg')"><img src="assets/cocopeat-handful.jpg" alt="A handful of finished cocopeat" /><figcaption data-i18n="gcap1">Finished cocopeat</figcaption></figure>
+      <figure onclick="openLightbox('assets/pallet-top-detail-a.jpg')"><img src="assets/pallet-top-detail-a.jpg" alt="Cocopeat Pallet, top detail" /><figcaption data-i18n="gcap2">Pallet — top detail</figcaption></figure>
+      <figure onclick="openLightbox('assets/coconut-split.jpg')"><img src="assets/coconut-split.jpg" alt="Split coconuts" /><figcaption data-i18n="gcap3">Raw material</figcaption></figure>
+      <figure onclick="openLightbox('assets/sack-open.jpg')"><img src="assets/sack-open.jpg" alt="Cocopeat Sack, open" /><figcaption data-i18n="products.sack.h3short">Cocopeat Sack</figcaption></figure>
+      <figure onclick="openLightbox('assets/pallet-stack-a.jpg')"><img src="assets/pallet-stack-a.jpg" alt="Stacked Cocopeat Pallets" /><figcaption data-i18n="gcap5">Stacked pallets</figcaption></figure>
+      <figure onclick="openLightbox('assets/hero-sacks.jpg')"><img src="assets/hero-sacks.jpg" alt="Warehouse of cocopeat sacks" /><figcaption data-i18n="gcap6">Warehouse handling</figcaption></figure>
+      <figure onclick="openLightbox('assets/pallet-corner-detail.jpg')"><img src="assets/pallet-corner-detail.jpg" alt="Pallet corner joinery detail" /><figcaption data-i18n="gcap7">Molded detail</figcaption></figure>
+      <figure onclick="openLightbox('assets/durability-context.jpg')"><img src="assets/durability-context.jpg" alt="Durability test in progress" /><figcaption data-i18n="gcap8">Durability test</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-dark" data-i18n="faq.eyebrow">FAQ</p>
+      <h2 data-i18n="faq.h2">Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q"><span data-i18n="faq1.q">What is cocopeat?</span><span class="plus"></span></button>
+        <div class="faq-a"><p data-i18n="faq1.a">Cocopeat is a natural growing medium made from coconut husk — a byproduct of the coconut industry. It's biodegradable, renewable, and used as a soil amendment or growing medium in agriculture and horticulture.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq2.q">What are the main applications of cocopeat?</span><span class="plus"></span></button>
+        <div class="faq-a"><p data-i18n="faq2.a">Our Cocopeat Sack is used for direct potting and home gardening. Our Cocopeat Pallet is used in freight, export and supply-chain logistics as a wood-free alternative to timber pallets.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq3.q">What's the difference between the Cocopeat Sack and Cocopeat Pallet?</span><span class="plus"></span></button>
+        <div class="faq-a"><p data-i18n="faq3.a">They're very different products. The Cocopeat Sack is loose, uncompressed cocopeat, ready to use straight from the bag for growing. The Cocopeat Pallet is a rigid, molded pallet made from upcycled agricultural waste, used to replace timber pallets in shipping and logistics.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq4.q">How durable is the Cocopeat Pallet?</span><span class="plus"></span></button>
+        <div class="faq-a"><p data-i18n="faq4.a">In our own testing, shown above, the Cocopeat Pallet held up to repeated impact by hand alongside a plastic pallet and a timber pallet — both of which were damaged. It's also exempt from ISPM 15 fumigation treatment, since it isn't made of wood.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq5.q">How can I enquire about the products?</span><span class="plus"></span></button>
+        <div class="faq-a"><p data-i18n="faq5.a">Reach out via WhatsApp, phone or email — our contact details are just below — and our team will get back to you about pricing, quantities and availability.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-dark" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-cta reveal">
+      <p class="eyebrow eyebrow-light" data-i18n="contact.eyebrow">Get In Touch</p>
+      <h2 data-i18n="contact.h2">Let's grow something better.</h2>
+      <p data-i18n="contact.p">Looking for reliable cocopeat solutions? Get in touch with our team to discuss your requirements.</p>
+      <div class="social-row">
+        <span class="social-pill">Facebook</span>
+        <span class="social-pill">TikTok</span>
+        <span class="social-pill">Instagram</span>
+      </div>
+    </div>
+    <div class="contact-cards reveal">
+      <a class="contact-card" href="https://wa.me/60124076469" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+        <div><div class="k" data-i18n="contact.card1.k">WhatsApp / Phone — Ron</div><div class="v">012-407 6469</div></div>
+      </a>
+      <a class="contact-card" href="https://wa.me/60194882504" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+        <div><div class="k" data-i18n="contact.card2.k">WhatsApp / Phone — YS Lim</div><div class="v">019-488 2504</div></div>
+      </a>
+      <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=ecoterreaglobal@gmail.com" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><div class="k" data-i18n="contact.card3.k">Email</div><div class="v">ecoterreaglobal@gmail.com</div></div>
+      </a>
+      <a class="contact-card" href="https://maps.app.goo.gl/MicWxm6FgXbRUcWf6" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.5 7-12.5A7 7 0 0 0 5 9.5C5 14.5 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        <div><div class="k" data-i18n="contact.card4.k">Address</div><div class="v">Lot 4696, Teluk Buloh, Mukim Hutan Melintang<small>34600 Bagan Datuk, Perak, Malaysia</small></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand"><img src="assets/logo-full.png" alt="Eco Terra Agro Global" /></a>
+        <p data-i18n="footer.brand.p">Reliable cocopeat and coconut-based agricultural solutions — from coconut husk to growing solution.</p>
+      </div>
+      <div>
+        <h5 data-i18n="footer.navigate">Navigate</h5>
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#products" data-i18n="nav.products">Products</a></li>
+          <li><a href="#why" data-i18n="nav.why">Why Cocopeat</a></li>
+          <li><a href="#sustainability" data-i18n="nav.sustainability">Sustainability</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="nav.products">Products</h5>
+        <ul>
+          <li><a href="#products" data-i18n="products.sack.h3short">Cocopeat Sack</a></li>
+          <li><a href="#products" data-i18n="products.pallet.h3short">Cocopeat Pallet</a></li>
+          <li><a href="#durability" data-i18n="nav.durability">Durability</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="footer.contact">Contact</h5>
+        <ul>
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ecoterreaglobal@gmail.com" target="_blank" rel="noopener">ecoterreaglobal@gmail.com</a></li>
+          <li><a href="https://wa.me/60124076469">012-407 6469 (Ron)</a></li>
+          <li><a href="https://wa.me/60194882504">019-488 2504 (YS Lim)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Eco Terra Agro Global Sdn. Bhd. All rights reserved.</span>
+      <span data-i18n="footer.ssm">Registered in Malaysia (SSM)</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Enlarged view" />
+</div>
+
+<script>
+  // Nav solid on scroll
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => { nav.classList.toggle('solid', window.scrollY > 40); };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    const sync = () => { a.style.maxHeight = item.classList.contains('open') ? a.scrollHeight + 'px' : '0px'; };
+    sync();
+    q.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => { if (o !== item) { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = '0px'; } });
+      item.classList.toggle('open', willOpen);
+      sync();
+    });
+  });
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.faq-item.open').forEach(item => { item.querySelector('.faq-a').style.maxHeight = item.querySelector('.faq-a').scrollHeight + 'px'; });
+  });
+
+  // Video play overlay
+  const vid = document.getElementById('durabilityVideo');
+  const overlay = document.getElementById('videoPlayOverlay');
+  overlay.addEventListener('click', () => { vid.play(); overlay.classList.add('hidden'); });
+  vid.addEventListener('play', () => overlay.classList.add('hidden'));
+  vid.addEventListener('pause', () => overlay.classList.remove('hidden'));
+
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+  document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ---------------- Language toggle (EN / 中文) ----------------
+  const I18N = {
+    "nav.home": { en: `Home`, zh: `首页` },
+    "nav.about": { en: `About`, zh: `关于我们` },
+    "nav.products": { en: `Products`, zh: `产品` },
+    "nav.why": { en: `Why Cocopeat`, zh: `为什么选择椰糠` },
+    "nav.durability": { en: `Durability`, zh: `耐用性测试` },
+    "nav.applications": { en: `Applications`, zh: `应用领域` },
+    "nav.sustainability": { en: `Sustainability`, zh: `可持续发展` },
+    "nav.contact": { en: `Contact`, zh: `联系我们` },
+    "cta.getintouch": { en: `Get in Touch`, zh: `联系我们` },
+
+    "hero.h1": { en: `Cocopeat, <em>grown</em><br>for purpose.`, zh: `椰糠，<em>因需而生</em>。` },
+    "hero.lead": { en: `Reliable cocopeat and coconut-based agricultural solutions, made from upcycled coconut husk to help growers and supply chains work better.`, zh: `可靠的椰糠与椰壳基农业解决方案，以回收椰壳为原料，助力种植者与供应链更高效运作。` },
+    "hero.cta1": { en: `Explore Our Products`, zh: `探索我们的产品` },
+    "hero.scroll": { en: `Scroll`, zh: `向下滚动` },
+
+    "about.eyebrow": { en: `About Us`, zh: `关于我们` },
+    "about.h2": { en: `Naturally sourced.<br>Carefully prepared.`, zh: `天然选材。<br>精心制备。` },
+    "about.body": { en: `Eco Terra Agro Global provides reliable cocopeat and coconut-based agricultural solutions, made to help growers work more efficiently in healthier growing environments — from commercial farms and nurseries to distributors and hobbyist buyers.`, zh: `Eco Terra Agro Global 致力于提供可靠的椰糠与椰壳基农业解决方案，协助种植者在更健康的种植环境中提升效率——服务对象涵盖商业农场、苗圃、经销商以及零售买家。` },
+    "about.point1.h4": { en: `Premium Quality`, zh: `优质保证` },
+    "about.point1.p": { en: `Consistent cocopeat, prepared with care from raw coconut husk.`, zh: `以原始椰壳精心制备，品质始终如一的椰糠。` },
+    "about.point2.h4": { en: `Dependable Supply`, zh: `稳定供应` },
+    "about.point2.p": { en: `Focused on reliable availability for businesses that depend on us.`, zh: `专注于为依赖我们的企业提供稳定可靠的供货。` },
+    "about.point3.h4": { en: `Ethical Sourcing`, zh: `道德采购` },
+    "about.point3.p": { en: `Built on giving new value to coconut husk that would otherwise go to waste.`, zh: `为原本会被废弃的椰壳赋予新价值。` },
+    "about.tag": { en: `<strong>100%</strong>Made from coconut husk — a byproduct of the coconut industry, not a mined or synthetic material.`, zh: `<strong>100%</strong>取材自椰壳——椰子产业的副产品，而非开采或合成材料。` },
+
+    "products.eyebrow": { en: `Our Range`, zh: `产品系列` },
+    "products.h2": { en: `Our Cocopeat Products`, zh: `我们的椰糠产品` },
+    "products.sub": { en: `Two products, built for two different jobs — from the growing bench to the shipping dock.`, zh: `两款产品，各司其职——从种植台到出货码头。` },
+
+    "products.sack.index": { en: `Product 01`, zh: `产品 01` },
+    "products.sack.h3": { en: `Cocopeat Sack`, zh: `椰糠包 Cocopeat Sack` },
+    "products.sack.h3short": { en: `Cocopeat Sack`, zh: `椰糠包` },
+    "products.sack.desc": { en: `Loose, uncompressed cocopeat sold ready to use — no soaking, no expansion, no waiting. Straight from the bag to the pot.`, zh: `松散、未压缩的椰糠，开袋即用——无需泡水、无需膨胀、无需等待，从包装袋直接用于种植。` },
+    "products.sack.li1": { en: `Usable immediately — no rehydration required`, zh: `即刻可用，无需泡水` },
+    "products.sack.li2": { en: `Controlled moisture, easy to handle and store`, zh: `湿度可控，易于搬运与存放` },
+    "products.sack.li3": { en: `Suited to direct potting and home gardening`, zh: `适用于直接盆栽与家庭园艺` },
+
+    "products.pallet.index": { en: `Product 02`, zh: `产品 02` },
+    "products.pallet.h3": { en: `Cocopeat Pallet`, zh: `椰糠托盘 Cocopeat Pallet` },
+    "products.pallet.h3short": { en: `Cocopeat Pallet`, zh: `椰糠托盘` },
+    "products.pallet.desc": { en: `Malaysia's first wood-free shipping pallet, manufactured entirely from upcycled agricultural waste — a direct replacement for standard timber pallets.`, zh: `马来西亚首款无木化运输托盘，完全以回收农业废料制成——可直接替代传统木制托盘。` },
+    "products.pallet.li1": { en: `Cost and space efficient versus timber pallets`, zh: `相较木托盘更省成本、更省空间` },
+    "products.pallet.li2": { en: `Industrial strength — built for demanding handling`, zh: `工业级强度，适应高强度搬运` },
+    "products.pallet.li3": { en: `No wood means no ISPM 15 fumigation requirement for export`, zh: `不含木材，出口无需ISPM 15熏蒸处理` },
+
+    "chip.soilamendment": { en: `Soil Amendment`, zh: `土壤改良剂` },
+    "chip.readytouse": { en: `Ready to Use`, zh: `开袋即用` },
+    "chip.hobbyist": { en: `Hobbyist Friendly`, zh: `适合家庭园艺` },
+    "chip.bulk": { en: `Bulk / Wholesale`, zh: `散装／批发` },
+    "chip.exportready": { en: `Export Ready`, zh: `适合出口` },
+    "chip.ispm15": { en: `ISPM 15 Exempt`, zh: `免ISPM 15熏蒸` },
+
+    "label.size": { en: `Size`, zh: `规格` },
+    "label.sizesmm": { en: `Sizes (mm)`, zh: `尺寸（毫米）` },
+    "label.bestfor": { en: `Best For`, zh: `适用对象` },
+    "value.retailhome": { en: `Retail &amp; Home Use`, zh: `零售与家庭使用` },
+    "value.freightlogistics": { en: `Freight &amp; Logistics`, zh: `货运与物流` },
+
+    "compare.eyebrow": { en: `At a Glance`, zh: `一览对比` },
+    "compare.h2": { en: `Cocopeat Sack vs. Cocopeat Pallet`, zh: `椰糠包 vs. 椰糠托盘` },
+    "compare.sub": { en: `Two very different products built for two different stages of your operation.`, zh: `两款截然不同的产品，服务于您业务的不同阶段。` },
+    "compare.format": { en: `Format`, zh: `形态` },
+    "compare.mainpurpose": { en: `Main Purpose`, zh: `主要用途` },
+    "compare.handling": { en: `Handling`, zh: `搬运方式` },
+    "compare.durability": { en: `Durability`, zh: `耐用性` },
+    "compare.suitablefor": { en: `Suitable For`, zh: `适用场景` },
+    "compare.sack.purpose": { en: `Loose, ready-to-use growing medium`, zh: `松散、开袋即用的种植介质` },
+    "compare.sack.handling": { en: `Ready straight from the bag — no rehydration`, zh: `开袋即可使用，无需泡水` },
+    "compare.sack.durability": { en: `Packed for safe handling and storage`, zh: `包装设计便于安全搬运与存放` },
+    "compare.sack.suitable": { en: `Direct potting, home &amp; hobby gardening`, zh: `直接盆栽、家庭与休闲园艺` },
+    "compare.pallet.purpose": { en: `Wood-free shipping &amp; handling pallet`, zh: `无木化运输与搬运托盘` },
+    "compare.pallet.handling": { en: `Rigid, stackable molded unit for freight`, zh: `坚固、可堆叠的模压货运单元` },
+    "compare.pallet.durability": { en: `Demonstrated to hold up under repeated impact — see below`, zh: `经测试可承受多次冲击——详见下方` },
+    "compare.pallet.suitable": { en: `Freight, export &amp; supply-chain logistics`, zh: `货运、出口与供应链物流` },
+
+    "why.eyebrow": { en: `Why Cocopeat`, zh: `为什么选择椰糠` },
+    "why.h2": { en: `A Better Growing Medium, By Nature`, zh: `源自天然的更优种植介质` },
+    "why.sub": { en: `Cocopeat starts as a coconut husk — a byproduct of the coconut industry that would otherwise be discarded or burned.`, zh: `椰糠源自椰壳——椰子产业的副产品，原本会被丢弃或焚烧。` },
+    "why1.h4": { en: `Natural &amp; Renewable`, zh: `天然可再生` },
+    "why1.p": { en: `Made from coconut husk — a renewable resource that comes naturally from the coconut industry, not a mined or synthetic material.`, zh: `取材自椰壳——来自椰子产业的天然可再生资源，而非开采或合成材料。` },
+    "why2.h4": { en: `Reduces Waste`, zh: `减少废弃物` },
+    "why2.p": { en: `Turns discarded coconut husk into a useful growing medium, instead of letting it go to landfill or open burning.`, zh: `将废弃椰壳转化为实用的种植介质，避免其被填埋或露天焚烧。` },
+    "why3.h4": { en: `Biodegradable`, zh: `可生物降解` },
+    "why3.p": { en: `A natural material that decomposes after use, returning organic matter to the soil rather than persisting as waste.`, zh: `使用后可自然分解的天然材料，能将有机质归还土壤，而非成为持久废弃物。` },
+    "why4.h4": { en: `Water Management`, zh: `保水调节` },
+    "why4.p": { en: `Retains water effectively when used appropriately, which can help reduce how much water plants need.`, zh: `适当使用时能有效保水，有助于减少植物所需的浇水量。` },
+    "why5.h4": { en: `Low Environmental Impact`, zh: `环境影响低` },
+    "why5.p": { en: `Reuses agricultural waste and biodegrades naturally, giving it a relatively light footprint compared with synthetic media.`, zh: `再利用农业废料并可自然降解，相较合成介质环境负担更低。` },
+    "why6.h4": { en: `Versatile`, zh: `用途广泛` },
+    "why6.p": { en: `Suitable across a range of agricultural and horticultural growing applications, from hobby pots to commercial operations.`, zh: `适用于多种农业与园艺种植场景，从家庭盆栽到商业化种植皆宜。` },
+
+    "durability.eyebrow": { en: `Built to Withstand`, zh: `坚固耐用` },
+    "durability.h2": { en: `Strength You Can See`, zh: `看得见的强度` },
+    "durability.sub": { en: `Product quality isn't only something we describe — it's something we demonstrate.`, zh: `产品品质不只是用来描述的，更是用来证明的。` },
+    "durability.note": { en: `Unscripted field test, filmed by our team — sound off by default.`, zh: `由我们团队实地拍摄的真实测试，默认静音播放。` },
+    "durability.h3": { en: `Tested against timber and plastic, by hand.`, zh: `手动实测，对比木托盘与塑料托盘。` },
+    "durability.p": { en: `In this test, the Cocopeat Pallet was struck repeatedly alongside a standard plastic pallet and a timber pallet. Both alternatives cracked or broke apart under the impact — the Cocopeat Pallet held its shape.`, zh: `在这次测试中，椰糠托盘与一个标准塑料托盘、一个木托盘同时接受反复重击。两者皆出现裂损或破碎，椰糠托盘则保持完整。` },
+    "durability.stat1.n": { en: `3 pallets`, zh: `3 个托盘` },
+    "durability.stat1.l": { en: `tested side by side`, zh: `同场测试` },
+    "durability.stat2.l": { en: `exempt — no wood, no fumigation`, zh: `豁免——无木材、无需熏蒸` },
+    "durability.stat3.n": { en: `Molded`, zh: `模压成型` },
+    "durability.stat3.l": { en: `from upcycled agricultural waste`, zh: `以回收农业废料制成` },
+    "durability.cta": { en: `Ask About Bulk Orders`, zh: `咨询批量订购` },
+
+    "applications.eyebrow": { en: `Who We Serve`, zh: `服务对象` },
+    "applications.h2": { en: `Built For Every Stage, From Bench To Border`, zh: `从种植台到国境线，全程适用` },
+    "applications.sub": { en: `From a single home garden to a full container of export freight.`, zh: `从一个家庭花园，到一整柜的出口货运。` },
+    "app1.h4": { en: `Home &amp; Hobby Growers`, zh: `家庭与园艺爱好者` },
+    "app1.p": { en: `Direct potting and everyday gardening with the Cocopeat Sack.`, zh: `使用椰糠包进行日常盆栽与园艺种植。` },
+    "app2.h4": { en: `Farms &amp; Nurseries`, zh: `农场与苗圃` },
+    "app2.p": { en: `A consistent growing medium for larger-scale operations.`, zh: `为大规模种植提供稳定一致的种植介质。` },
+    "app3.h4": { en: `Distributors`, zh: `经销商` },
+    "app3.p": { en: `Dependable supply for businesses that move cocopeat onward.`, zh: `为转售椰糠的企业提供稳定供货。` },
+    "app4.h4": { en: `Export &amp; Logistics`, zh: `出口与物流` },
+    "app4.p": { en: `The Cocopeat Pallet replaces timber for freight and shipping.`, zh: `椰糠托盘可替代木材，用于货运与航运。` },
+
+    "sustain.eyebrow": { en: `Sustainability`, zh: `可持续发展` },
+    "sustain.h2": { en: `From Coconut Husk to Growing Solution`, zh: `从椰壳到种植解决方案` },
+    "sustain.sub": { en: `Cocopeat gives new value to a material the coconut industry would otherwise discard — turning waste into a working part of modern agriculture.`, zh: `椰糠为椰子产业原本会废弃的材料赋予新价值——将废料转化为现代农业的实用资源。` },
+    "flow1.h4": { en: `Coconut`, zh: `椰子` },
+    "flow1.p": { en: `The coconut industry's own supply — the starting point for everything we make.`, zh: `椰子产业自身的原料供给——我们一切产品的起点。` },
+    "flow2.h4": { en: `Husk`, zh: `椰壳` },
+    "flow2.p": { en: `The fibrous husk, otherwise burned or discarded, is separated and prepared.`, zh: `原本会被焚烧或丢弃的纤维椰壳，经分离与预处理。` },
+    "flow3.h4": { en: `Cocopeat`, zh: `椰糠` },
+    "flow3.p": { en: `Processed into a natural, biodegradable growing medium — ready to use.`, zh: `加工成天然、可生物降解、即可使用的种植介质。` },
+    "flow4.h4": { en: `Growing Application`, zh: `种植应用` },
+    "flow4.p": { en: `Put to work in pots, nurseries and growing operations of every scale.`, zh: `应用于各类规模的盆栽、苗圃与种植作业。` },
+
+    "gallery.eyebrow": { en: `Gallery`, zh: `作品集` },
+    "gallery.h2": { en: `From Husk to Handling`, zh: `从椰壳到搬运现场` },
+    "gallery.sub": { en: `A closer look at the material, the products, and how they're made and moved.`, zh: `近距离了解原料、产品，以及它们的制作与运输过程。` },
+    "gcap1": { en: `Finished cocopeat`, zh: `成品椰糠` },
+    "gcap2": { en: `Pallet — top detail`, zh: `托盘——顶部细节` },
+    "gcap3": { en: `Raw material`, zh: `原始材料` },
+    "gcap5": { en: `Stacked pallets`, zh: `堆叠托盘` },
+    "gcap6": { en: `Warehouse handling`, zh: `仓库搬运` },
+    "gcap7": { en: `Molded detail`, zh: `模压细节` },
+    "gcap8": { en: `Durability test`, zh: `耐用性测试` },
+
+    "faq.eyebrow": { en: `FAQ`, zh: `常见问题` },
+    "faq.h2": { en: `Common Questions`, zh: `常见问题解答` },
+    "faq1.q": { en: `What is cocopeat?`, zh: `什么是椰糠？` },
+    "faq1.a": { en: `Cocopeat is a natural growing medium made from coconut husk — a byproduct of the coconut industry. It's biodegradable, renewable, and used as a soil amendment or growing medium in agriculture and horticulture.`, zh: `椰糠是以椰壳制成的天然种植介质，属于椰子产业的副产品。它可生物降解、可再生，广泛用作农业与园艺中的土壤改良剂或种植介质。` },
+    "faq2.q": { en: `What are the main applications of cocopeat?`, zh: `椰糠的主要用途有哪些？` },
+    "faq2.a": { en: `Our Cocopeat Sack is used for direct potting and home gardening. Our Cocopeat Pallet is used in freight, export and supply-chain logistics as a wood-free alternative to timber pallets.`, zh: `我们的椰糠包适用于直接盆栽与家庭园艺；椰糠托盘则作为木托盘的无木化替代方案，用于货运、出口与供应链物流。` },
+    "faq3.q": { en: `What's the difference between the Cocopeat Sack and Cocopeat Pallet?`, zh: `椰糠包与椰糠托盘有什么区别？` },
+    "faq3.a": { en: `They're very different products. The Cocopeat Sack is loose, uncompressed cocopeat, ready to use straight from the bag for growing. The Cocopeat Pallet is a rigid, molded pallet made from upcycled agricultural waste, used to replace timber pallets in shipping and logistics.`, zh: `两者是完全不同的产品。椰糠包是松散、未压缩的椰糠，开袋即可用于种植；椰糠托盘则是以回收农业废料模压而成的坚固托盘，用于替代货运与物流中的木托盘。` },
+    "faq4.q": { en: `How durable is the Cocopeat Pallet?`, zh: `椰糠托盘的耐用性如何？` },
+    "faq4.a": { en: `In our own testing, shown above, the Cocopeat Pallet held up to repeated impact by hand alongside a plastic pallet and a timber pallet — both of which were damaged. It's also exempt from ISPM 15 fumigation treatment, since it isn't made of wood.`, zh: `如上方测试所示，椰糠托盘在与塑料托盘、木托盘同时接受人工反复冲击测试后依然保持完整，而另外两者均出现损坏。此外，由于不含木材，它也无需进行ISPM 15熏蒸处理。` },
+    "faq5.q": { en: `How can I enquire about the products?`, zh: `如何咨询产品信息？` },
+    "faq5.a": { en: `Reach out via WhatsApp, phone or email — our contact details are just below — and our team will get back to you about pricing, quantities and availability.`, zh: `欢迎通过WhatsApp、电话或电子邮件与我们联系（联系方式如下），我们的团队将尽快回复您有关价格、数量与供货情况的咨询。` },
+
+    "contact.eyebrow": { en: `Get In Touch`, zh: `联系我们` },
+    "contact.h2": { en: `Let's grow something better.`, zh: `一起，种出更好的未来。` },
+    "contact.p": { en: `Looking for reliable cocopeat solutions? Get in touch with our team to discuss your requirements.`, zh: `正在寻找可靠的椰糠解决方案？欢迎联系我们的团队，一起讨论您的需求。` },
+    "contact.card1.k": { en: `WhatsApp / Phone — Ron`, zh: `WhatsApp／电话 — Ron` },
+    "contact.card2.k": { en: `WhatsApp / Phone — YS Lim`, zh: `WhatsApp／电话 — YS Lim` },
+    "contact.card3.k": { en: `Email`, zh: `电子邮件` },
+    "contact.card4.k": { en: `Address`, zh: `地址` },
+
+    "footer.brand.p": { en: `Reliable cocopeat and coconut-based agricultural solutions — from coconut husk to growing solution.`, zh: `可靠的椰糠与椰壳基农业解决方案——从椰壳走向种植方案。` },
+    "footer.navigate": { en: `Navigate`, zh: `网站导览` },
+    "footer.contact": { en: `Contact`, zh: `联系方式` },
+    "footer.copyright": { en: `© 2026 Eco Terra Agro Global Sdn. Bhd. All rights reserved.`, zh: `© 2026 Eco Terra Agro Global Sdn. Bhd. 版权所有。` },
+    "footer.ssm": { en: `Registered in Malaysia (SSM)`, zh: `已在马来西亚注册（SSM）` },
+  };
+
+  function applyLanguage(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const entry = I18N[el.dataset.i18n];
+      if (entry && entry[lang] !== undefined) el.innerHTML = entry[lang];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // Re-sync any open FAQ heights after text swap (Chinese/English lengths differ)
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(a => { a.style.maxHeight = a.scrollHeight + 'px'; });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+</script>
